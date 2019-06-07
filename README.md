@@ -1,2 +1,5 @@
 # v9-geckos-team-04
-Add-project-description-here | Voyage-9 | https://chingu.io/
+
+## Team members:
+* Hemlata || [Github Profile](https://github.com/hemlatab)
+* Pablo WBK || [Github Profile](https://github.com/pablowbk)

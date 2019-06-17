@@ -5,14 +5,14 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-     <h1>Vext</h1>
-     <h2>Speak your mind</h2>
-     <button value="start">Start recording</button>
-     <button value="stop">Stop</button>
+     <h1 className="title">Vext</h1>
+     <h2 className="subTitle">Speak your mind</h2>
+     <button value="start" className="start">Start recording</button>
+     <button value="stop" className="stop">Stop</button>
      <br/>
-     <textarea></textarea>
+     <textarea className="textarea"></textarea>
      <br/>
-     <button>Copy text</button>
+     <button className="btn">Copy text</button>
     </div>
   );
 }

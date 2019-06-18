@@ -2,12 +2,57 @@ import React from 'react';
 import './App.css';
 
 
+// check for availability
+var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+// initial set up
+var recognition = new SpeechRecognition();
+recognition.interimResults = true;
+recognition.lang = 'en-US';
+recognition.maxAlternatives = 1;
+
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      textarea: ""
+      textarea: "",
+      live: false
     }
+  }
+
+  componentDidMount() {
+    console.log("App mounted. Proceed...")
+    recognition.onresult = (e) => {
+      const transcript = Array.from(e.results)
+      .map(result => result[0])
+      .map(result => result.transcript)
+      .join('')
+
+      if (e.results[0].isFinal) {
+        this.setState(prevState => (
+          {
+            textarea: transcript
+          }
+        ));
+        console.log(`You said: ${transcript}`);
+      }
+    }
+
+    recognition.onstart = () => {
+      this.setState(prevState => ({
+          live: true
+        })
+      );
+      console.log('Speech recognition service has started');
+    };
+    recognition.onend = () => {
+      this.setState(prevState => ({
+          live: false
+        })
+      );
+      console.log('Speech recognition service disconnected');
+    };
+
+    //Voice Recognition Logic ENDS here
   }
 
  // Method that will update both state and the textarea.value
@@ -20,13 +65,34 @@ class App extends React.Component {
     );
   }
 
+  handleStart = () => {
+    recognition.start();
+  }
+
+  handleStop = () => {
+    recognition.abort();
+  }
+
   render() {
+
     return (
       <div className="App">
         <h1 className="title">Vext</h1>
         <h2 className="subTitle">Speak your mind</h2>
-        <button value="start" className="start">Start recording</button>
-        <button value="stop" className="stop">Stop</button>
+        <button
+          value="start"
+          className="start"
+          onClick={this.handleStart}
+        >
+          Start recording
+        </button>
+        <button
+          value="stop"
+          className="stop"
+          onClick={this.handleStop}
+        >
+          Stop
+        </button>
         <br/>
         <textarea className="textarea" name="textarea" onChange={this.handleChange} value={this.state.textarea}></textarea>
         <br/>

@@ -97,6 +97,7 @@ class App extends React.Component {
         <textarea className="textarea" name="textarea" onChange={this.handleChange} value={this.state.textarea}></textarea>
         <br/>
         <button className="btn">Copy text</button>
+        <button className="btn" type="reset">Clear</button>
       </div>
     );
   }

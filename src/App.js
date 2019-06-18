@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Recording from './Recording.js'
 
 
 // check for availability
@@ -78,7 +79,11 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1 className="title">Vext</h1>
-        <h2 className="subTitle">Speak your mind</h2>
+        {
+          this.state.live
+            ? <Recording live={this.state.live}/>
+            : <h2 className="subTitle">Speak your mind</h2>
+        }
         <button
           value="start"
           className="start"

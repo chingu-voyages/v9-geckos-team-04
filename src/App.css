@@ -41,3 +41,14 @@
   font-weight:bold;
   margin-bottom: 20px;
 }
+
+.pulse {
+  transition: all 200ms ease;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%    {opacity: 1;}
+  50%   {opacity: .3;}
+  100%  {opacity: 1;}
+}

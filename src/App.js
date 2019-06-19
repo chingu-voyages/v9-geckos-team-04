@@ -24,6 +24,26 @@ class App extends React.Component {
 
   componentDidMount() {
     console.log("App mounted. Proceed...")
+  }
+
+  handleListen = () => {
+    if (this.state.live) {
+      recognition.start();
+      recognition.onend = () => {
+        console.log("...still listening...");
+        recognition.start();
+      }
+    } else {
+      recognition.stop();
+      recognition.onend = () => {
+        console.log("Speech recognition stopped");
+      }
+    }
+
+    recognition.onstart = () => {
+      console.log('Speech recognition service is Running...');
+    };
+
     recognition.onresult = (e) => {
       const transcript = Array.from(e.results)
       .map(result => result[0])
@@ -36,35 +56,19 @@ class App extends React.Component {
       }
     }
 
-    recognition.onstart = () => {
-      this.setState(prevState => ({live: true}));
-      console.log('Speech recognition started');
-    };
-
-    recognition.onend = () => {
-      this.setState(prevState => ({live: false}));
-      console.log('Speech recognition stopped');
-    };
   }
 
-  handleListen = () => {
-
-  }
-
-  // Method that will update both state and the textarea.value
-  handleChange = (event) => {
-    const {name, value} = event.target; //destructuring
-    this.setState(prevState => ({
-      [name]: value //calling "name" will make sure we target the right element
-    }));
-  }
 
   handleStart = () => {
-    recognition.start();
+    this.setState({
+      live: true
+    }, this.handleListen)
   }
 
   handleStop = () => {
-    recognition.abort();
+    this.setState({
+      live: false
+    }, this.handleListen)
   }
 
   handleCopy = () => {
@@ -75,26 +79,37 @@ class App extends React.Component {
     }
   }
 
+  // Method that will update both state and the textarea.value
+  handleChange = (event) => {
+    const {name, value} = event.target; //destructuring
+    this.setState(prevState => ({
+      [name]: value //calling "name" will make sure we target the right element
+    }));
+  }
+
+
   render() {
 
-    return (<div className="App">
-      <h1 className="title">Vext</h1>
-      {
-        this.state.live
-          ? <Recording live={this.state.live}/>
-          : <h2 className="subTitle">Speak your mind</h2>
-      }
-      <button value="start" className="start" onClick={this.handleStart}>
-        Start recording
-      </button>
-      <button value="stop" className="stop" onClick={this.handleStop}>
-        Stop
-      </button>
-      <br/>
-      <textarea className="textarea" name="textarea" onChange={this.handleChange} value={this.state.textarea}></textarea>
-      <br/>
-      <button className="btn" onClick={this.handleCopy}>Copy text</button>
-    </div>);
+    return (
+      <div className="App">
+        <h1 className="title">Vext</h1>
+        {
+          this.state.live
+            ? <Recording live={this.state.live}/>
+            : <h2 className="subTitle">Speak your mind</h2>
+        }
+        <button value="start" className="start" onClick={this.handleStart}>
+          Start recording
+        </button>
+        <button value="stop" className="stop" onClick={this.handleStop}>
+          Stop
+        </button>
+        <br/>
+        <textarea className="textarea" name="textarea" onChange={this.handleChange} value={this.state.textarea}></textarea>
+        <br/>
+        <button className="btn" onClick={this.handleCopy}>Copy text</button>
+      </div>
+    );
   }
 }
 

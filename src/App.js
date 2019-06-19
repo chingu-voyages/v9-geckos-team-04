@@ -2,20 +2,22 @@ import React from 'react';
 import './App.css';
 import Recording from './Recording.js'
 
-
-// check for availability
+//----------WEB SPEECH API------------------
 var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 // initial set up
 var recognition = new SpeechRecognition();
 recognition.interimResults = true;
 recognition.lang = 'en-US';
 recognition.maxAlternatives = 1;
+// ------------------------------------------
 
+//---------Main Component-------------------
 class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       textarea: "",
+      copied: false,
       live: false
     }
   }
@@ -29,41 +31,32 @@ class App extends React.Component {
       .join('')
 
       if (e.results[0].isFinal) {
-        this.setState(prevState => (
-          {
-            textarea: transcript
-          }
-        ));
+        this.setState(prevState => ({textarea: transcript}));
         console.log(`You said: ${transcript}`);
       }
     }
 
     recognition.onstart = () => {
-      this.setState(prevState => ({
-          live: true
-        })
-      );
-      console.log('Speech recognition service has started');
-    };
-    recognition.onend = () => {
-      this.setState(prevState => ({
-          live: false
-        })
-      );
-      console.log('Speech recognition service disconnected');
+      this.setState(prevState => ({live: true}));
+      console.log('Speech recognition started');
     };
 
-    //Voice Recognition Logic ENDS here
+    recognition.onend = () => {
+      this.setState(prevState => ({live: false}));
+      console.log('Speech recognition stopped');
+    };
   }
 
- // Method that will update both state and the textarea.value
+  handleListen = () => {
+
+  }
+
+  // Method that will update both state and the textarea.value
   handleChange = (event) => {
     const {name, value} = event.target; //destructuring
-    this.setState(prevState => (
-      {
-        [name]: value //calling "name" will make sure we target the right element
-      })
-    );
+    this.setState(prevState => ({
+      [name]: value //calling "name" will make sure we target the right element
+    }));
   }
 
   handleStart = () => {
@@ -74,36 +67,34 @@ class App extends React.Component {
     recognition.abort();
   }
 
+  handleCopy = () => {
+    const targetTextarea = document.querySelector('.textarea');
+    if (targetTextarea.value !== "" ) {
+      targetTextarea.select();
+      document.execCommand('copy');
+    }
+  }
+
   render() {
 
-    return (
-      <div className="App">
-        <h1 className="title">Vext</h1>
-        {
-          this.state.live
-            ? <Recording live={this.state.live}/>
-            : <h2 className="subTitle">Speak your mind</h2>
-        }
-        <button
-          value="start"
-          className="start"
-          onClick={this.handleStart}
-        >
-          Start recording
-        </button>
-        <button
-          value="stop"
-          className="stop"
-          onClick={this.handleStop}
-        >
-          Stop
-        </button>
-        <br/>
-        <textarea className="textarea" name="textarea" onChange={this.handleChange} value={this.state.textarea}></textarea>
-        <br/>
-        <button className="btn">Copy text</button>
-      </div>
-    );
+    return (<div className="App">
+      <h1 className="title">Vext</h1>
+      {
+        this.state.live
+          ? <Recording live={this.state.live}/>
+          : <h2 className="subTitle">Speak your mind</h2>
+      }
+      <button value="start" className="start" onClick={this.handleStart}>
+        Start recording
+      </button>
+      <button value="stop" className="stop" onClick={this.handleStop}>
+        Stop
+      </button>
+      <br/>
+      <textarea className="textarea" name="textarea" onChange={this.handleChange} value={this.state.textarea}></textarea>
+      <br/>
+      <button className="btn" onClick={this.handleCopy}>Copy text</button>
+    </div>);
   }
 }
 

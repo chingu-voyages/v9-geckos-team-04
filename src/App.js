@@ -30,7 +30,6 @@ class App extends React.Component {
     if (this.state.live) {
       recognition.start();
       recognition.onend = () => {
-        console.log("...still listening...");
         recognition.start();
       }
     } else {
@@ -51,7 +50,7 @@ class App extends React.Component {
       .join('')
 
       if (e.results[0].isFinal) {
-        this.setState(prevState => ({textarea: transcript}));
+        this.setState(prevState => ({textarea: prevState.textarea !== "" ? prevState.textarea + "\n" + transcript : transcript})); //"*** NO SPEECH RECOGNIZED ***"
         console.log(`You said: ${transcript}`);
       }
     }
@@ -71,11 +70,12 @@ class App extends React.Component {
     }, this.handleListen)
   }
 
-  handleCopy = () => {
+  handleCopy = (event) => {
     const targetTextarea = document.querySelector('.textarea');
     if (targetTextarea.value !== "" ) {
       targetTextarea.select();
       document.execCommand('copy');
+      // event.target.focus();  //this make the focus set to the button and not the textarea (on mbile it's kinda akward..,)
     }
   }
 
@@ -89,7 +89,6 @@ class App extends React.Component {
 
 
   render() {
-
     return (
       <div className="App">
         <h1 className="title">Vext</h1>
@@ -116,6 +115,7 @@ class App extends React.Component {
       </div>
     );
   }
+
 }
 
 export default App;

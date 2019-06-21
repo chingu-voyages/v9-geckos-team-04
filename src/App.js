@@ -30,7 +30,7 @@ class App extends React.Component {
     if (this.state.live) {
       recognition.start();
       recognition.onend = () => {
-        recognition.start();
+      recognition.start();
       }
     } else {
       recognition.stop();
@@ -79,6 +79,11 @@ class App extends React.Component {
     }
   }
 
+  handleClear = (event) => {
+    this.setState({
+      textarea: ""
+    })
+  }
   // Method that will update both state and the textarea.value
   handleChange = (event) => {
     const {name, value} = event.target; //destructuring
@@ -91,27 +96,29 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1 className="title">Vext</h1>
+      <h1 className="title">Vext</h1>
+      <div className="container">
+      <div className="content">
         {
           this.state.live
             ? <Recording live={this.state.live}/>
             : <h2 className="subTitle">Speak your mind</h2>
         }
-        <button value="start" className="start" onClick={this.handleStart}>
+        {this.state.live? <button value="stop" className="stop" onClick={this.handleStop}>
+          Stop recording
+        </button>:<button value="start" className="start" onClick={this.handleStart}>
           Start recording
-        </button>
-        <button value="stop" className="stop" onClick={this.handleStop}>
-          Stop
-        </button>
+        </button>}
         <br/>
         <textarea className="textarea" name="textarea" onChange={this.handleChange} value={this.state.textarea}></textarea>
         <br/>
-<<<<<<< HEAD
-        <button className="btn">Copy text</button>
-        <button className="btn" type="reset">Clear</button>
-=======
+
+        <button className="btn" onClick={this.handleClear}>Clear</button>
+
         <button className="btn" onClick={this.handleCopy}>Copy text</button>
->>>>>>> upstream/master
+
+      </div>
+      </div>
       </div>
     );
   }

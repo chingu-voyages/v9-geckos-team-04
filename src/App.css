@@ -1,22 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=B612+Mono|Lato&display=swap');
 .App {
-  margin: 0 auto;
+  /* margin: 0 auto; */
   text-align: center;
-  background-color: #9caab2;
-  padding-top:60px;
+  background-color: #ffffff;
+  /* padding-top:60px; */
+  background-image: url('./images/speech_to_text.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-family: 'Lato', sans-serif;
 }
-
+.container{
+  display: flex;
+  justify-content: flex-end;
+}
+.content{
+  width:60vw;
+}
 .title{
-  color:#2f5572;
+  color:#453adf;
+  font-size: 50px;
+  font-family: 'B612 Mono', monospace;
 }
 
 .subTitle{
-  font-weight: lighter;
-  color:#ffffff;
+  font-weight: 300;
+  color:#6c61f6;
 }
 
 .start, .stop {
   padding:10px;
-  background-color: #2f5572;
+  background-color: #6c61f6;
   color:#ffffff;
   font-weight: bold;
   font-size: 14px;
@@ -28,18 +41,22 @@
   width: 600px;
   height: 300px;
   margin: 20px 20px;
-  border: 3px solid #cccccc;
-  border-radius:5px;
+  /* border: 3px solid #cccccc; */
+  border:none;
+  border-radius:10px;
+  box-shadow: 0 0 3px 1px #39364d;
+  padding:15px;
+  font-size:14px;
 }
 
 .btn{
   padding:10px;
-  background-color: #d59541;
+  background-color: #39364d;
   color:#ffffff;
   font-size:14px;
   border-radius:5px;
   font-weight:bold;
-  margin-bottom: 20px;
+  margin:0 5px 20px 5px;
 }
 
 .pulse {

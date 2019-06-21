@@ -18,7 +18,7 @@
 }
 .title{
   color:#453adf;
-  font-size: 50px;
+  font-size: 65px;
   font-family: 'B612 Mono', monospace;
 }
 
@@ -38,7 +38,7 @@
 
 .textarea{
   overflow: auto;
-  width: 600px;
+  width: 500px;
   height: 300px;
   margin: 20px 20px;
   /* border: 3px solid #cccccc; */

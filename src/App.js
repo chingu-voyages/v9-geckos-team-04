@@ -96,29 +96,29 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-      <h1 className="title">Vext</h1>
-      <div className="container">
-      <div className="content">
-        {
-          this.state.live
-            ? <Recording live={this.state.live}/>
-            : <h2 className="subTitle">Speak your mind</h2>
-        }
-        {this.state.live? <button value="stop" className="stop" onClick={this.handleStop}>
-          Stop recording
-        </button>:<button value="start" className="start" onClick={this.handleStart}>
-          Start recording
-        </button>}
-        <br/>
-        <textarea className="textarea" name="textarea" onChange={this.handleChange} value={this.state.textarea}></textarea>
-        <br/>
+        <h1 className="title">Vext</h1>
+        <div className="container">
+          <div className="content">
+            {
+              this.state.live
+                ? <Recording live={this.state.live}/>
+                : <h2 className="subTitle">Speak your mind</h2>
+            }
+            {this.state.live? <button value="stop" className="stop" onClick={this.handleStop}>
+              Stop recording
+            </button>:<button value="start" className="start" onClick={this.handleStart}>
+              Start recording
+            </button>}
+            <br/>
+            <textarea className="textarea" name="textarea" onChange={this.handleChange} value={this.state.textarea}></textarea>
+            <br/>
 
-        <button className="btn" onClick={this.handleClear}>Clear</button>
+            <button className="btn" onClick={this.handleClear}>Clear</button>
 
-        <button className="btn" onClick={this.handleCopy}>Copy text</button>
+            <button className="btn" onClick={this.handleCopy}>Copy text</button>
 
-      </div>
-      </div>
+          </div>
+        </div>
       </div>
     );
   }

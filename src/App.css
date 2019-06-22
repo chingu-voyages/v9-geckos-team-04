@@ -62,7 +62,12 @@
   transition: all 200ms ease;
   animation: pulse 2s infinite ease-in-out;
 }
-
+.footer{
+  padding:20px;
+  color: #ffffff;
+  background-color: #4c4c56;
+  font-weight: 300;
+}
 @keyframes pulse {
   0%    {opacity: 1;}
   50%   {opacity: .3;}

@@ -119,8 +119,11 @@ class App extends React.Component {
             <button className="btn" onClick={this.handleCopy}>Copy text</button>
 
           </div>
+          <br/>
         </div>
-
+          <footer className="footer">
+          <p>Copyright &copy; {new Date().getFullYear()} </p>
+          </footer>
       </div>
     );
   }

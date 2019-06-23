@@ -25,9 +25,6 @@ class App extends React.Component {
     }
   }
 
-  componentDidMount() {
-    console.log("App mounted. Proceed...")
-  }
 
   handleListen = () => {
     if (this.state.live) {
@@ -87,11 +84,11 @@ class App extends React.Component {
       textarea: ""
     })
   }
-  // Method that will update both state and the textarea.value
+
   handleChange = (event) => {
-    const {name, value} = event.target; //destructuring
+    const {name, value} = event.target;
     this.setState(prevState => ({
-      [name]: value //calling "name" will make sure we target the right element
+      [name]: value
     }));
   }
 
@@ -100,29 +97,32 @@ class App extends React.Component {
       <div className="App">
         <Header />
         <main className="container">
-        <div className="col-1">
 
-        </div>
+          <div className="col-1"></div>
+
           <div className="col-2">
+
             {
               this.state.live
                 ? <Recording live={this.state.live}/>
                 : <h2 className="subTitle">Speak your mind</h2>
             }
-            {this.state.live?<Button style="stop" title="Stop recording" value="stop" handleClick={this.handleStop}/>
-            :<Button style="start" title="Start recording" value="start" handleClick={this.handleStart}/> 
+            {
+              this.state.live
+                ? <Button styles="stop" title="Stop recording" value="stop" handleClick={this.handleStop}/>
+                : <Button styles="start" title="Start recording" value="start" handleClick={this.handleStart}/>
             }
-            <br/>
-            <textarea className="textarea" name="textarea" onChange={this.handleChange} value={this.state.textarea}></textarea>
-            <br/>
 
-            <Button title="Clear" style="btn" handleClick={this.handleClear}/>
-            <Button  title="Copy text" style="btn" handleClick={this.handleCopy}/>
-          
+            <textarea className="textarea" name="textarea" onChange={this.handleChange} value={this.state.textarea}></textarea>
+
+            <div className="buttons">
+              <Button title="Clear" styles="btn" handleClick={this.handleClear}/>
+              <Button  title="Copy text" styles="btn" handleClick={this.handleCopy}/>
+            </div>
+            
           </div>
-          <br/>
         </main>
-         <Footer />
+        <Footer />
       </div>
     );
   }

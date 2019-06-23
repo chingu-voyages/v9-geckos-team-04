@@ -1,0 +1,9 @@
+.footer{
+    padding:8px;
+    color: #ffffff;
+    background-color: #4c4c56;
+    font-weight: 300;
+  }
+  .footer p{
+      margin:5px;
+  }

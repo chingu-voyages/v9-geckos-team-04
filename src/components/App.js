@@ -1,6 +1,9 @@
 import React from 'react';
 import './App.css';
-import Recording from './Recording.js'
+import Recording from '../Recording.js';
+import Header from './Header';
+import Footer from './Footer';
+import Button from './Button';
 
 //----------WEB SPEECH API------------------
 var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -92,38 +95,34 @@ class App extends React.Component {
     }));
   }
 
-
   render() {
     return (
       <div className="App">
+        <Header />
+        <main className="container">
+        <div className="col-1">
 
-        <h1 className="title">Vext</h1>
-        <div className="container">
-          <div className="content">
+        </div>
+          <div className="col-2">
             {
               this.state.live
                 ? <Recording live={this.state.live}/>
                 : <h2 className="subTitle">Speak your mind</h2>
             }
-            {this.state.live? <button value="stop" className="stop" onClick={this.handleStop}>
-              Stop recording
-            </button>:<button value="start" className="start" onClick={this.handleStart}>
-              Start recording
-            </button>}
+            {this.state.live?<Button style="stop" title="Stop recording" value="stop" handleClick={this.handleStop}/>
+            :<Button style="start" title="Start recording" value="start" handleClick={this.handleStart}/> 
+            }
             <br/>
             <textarea className="textarea" name="textarea" onChange={this.handleChange} value={this.state.textarea}></textarea>
             <br/>
 
-            <button className="btn" onClick={this.handleClear}>Clear</button>
-
-            <button className="btn" onClick={this.handleCopy}>Copy text</button>
-
+            <Button title="Clear" style="btn" handleClick={this.handleClear}/>
+            <Button  title="Copy text" style="btn" handleClick={this.handleCopy}/>
+          
           </div>
           <br/>
-        </div>
-          <footer className="footer">
-          <p>Copyright &copy; {new Date().getFullYear()} </p>
-          </footer>
+        </main>
+         <Footer />
       </div>
     );
   }

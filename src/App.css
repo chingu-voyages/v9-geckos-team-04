@@ -41,10 +41,9 @@
   width: 500px;
   height: 300px;
   margin: 20px 20px;
-  /* border: 3px solid #cccccc; */
   border:none;
   border-radius:10px;
-  box-shadow: 0 0 3px 1px #39364d;
+  box-shadow: 0 0 3px 5px rgba(0,0,0,0.12);
   padding:15px;
   font-size:14px;
 }
@@ -63,7 +62,12 @@
   transition: all 200ms ease;
   animation: pulse 2s infinite ease-in-out;
 }
-
+.footer{
+  padding:20px;
+  color: #ffffff;
+  background-color: #4c4c56;
+  font-weight: 300;
+}
 @keyframes pulse {
   0%    {opacity: 1;}
   50%   {opacity: .3;}

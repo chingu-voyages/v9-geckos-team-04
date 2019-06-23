@@ -96,6 +96,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+
         <h1 className="title">Vext</h1>
         <div className="container">
           <div className="content">
@@ -118,7 +119,11 @@ class App extends React.Component {
             <button className="btn" onClick={this.handleCopy}>Copy text</button>
 
           </div>
+          <br/>
         </div>
+          <footer className="footer">
+          <p>Copyright &copy; {new Date().getFullYear()} </p>
+          </footer>
       </div>
     );
   }

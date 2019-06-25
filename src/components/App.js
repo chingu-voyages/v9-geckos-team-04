@@ -4,6 +4,8 @@ import Recording from '../Recording.js';
 import Header from './Header';
 import Footer from './Footer';
 import Button from './Button';
+import { languages } from './langs';
+import Dropdown from './Dropdown';
 
 //----------WEB SPEECH API------------------
 var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -21,12 +23,9 @@ class App extends React.Component {
     this.state = {
       textarea: "",
       copied: false,
+      lang: recognition.lang,
       live: false
     }
-  }
-
-  componentDidMount() {
-    console.log("App mounted. Proceed...")
   }
 
   handleListen = () => {
@@ -55,6 +54,11 @@ class App extends React.Component {
       if (e.results[0].isFinal) {
         this.setState(prevState => ({textarea: prevState.textarea !== "" ? prevState.textarea + "\n" + transcript : transcript})); //"*** NO SPEECH RECOGNIZED ***"
         console.log(`You said: ${transcript}`);
+      }
+
+      // Pseudo-command
+      if (transcript.includes("up up down down left right left right")) {
+        console.log("KONAMIIIIIIIIIIIIIIIIIIIIIIII");
       }
     }
 
@@ -87,12 +91,18 @@ class App extends React.Component {
       textarea: ""
     })
   }
-  // Method that will update both state and the textarea.value
+
   handleChange = (event) => {
-    const {name, value} = event.target; //destructuring
+    const {name, value} = event.target;
     this.setState(prevState => ({
-      [name]: value //calling "name" will make sure we target the right element
+      [name]: value
     }));
+  }
+
+  handleLangChange = (event) => {
+    this.setState({lang: event.target.value});
+    recognition.lang = event.target.value;
+    console.log(recognition.lang)
   }
 
   render() {
@@ -100,29 +110,33 @@ class App extends React.Component {
       <div className="App">
         <Header />
         <main className="container">
-        <div className="col-1">
 
-        </div>
+          <div className="col-1"></div>
+
           <div className="col-2">
+
             {
               this.state.live
                 ? <Recording live={this.state.live}/>
                 : <h2 className="subTitle">Speak your mind</h2>
             }
-            {this.state.live?<Button style="stop" title="Stop recording" value="stop" handleClick={this.handleStop}/>
-            :<Button style="start" title="Start recording" value="start" handleClick={this.handleStart}/> 
+            {
+              this.state.live
+                ? <Button styles="stop" title="Stop recording" value="stop" handleClick={this.handleStop}/>
+                : <Button styles="start" title="Start recording" value="start" handleClick={this.handleStart}/>
             }
-            <br/>
-            <textarea className="textarea" name="textarea" onChange={this.handleChange} value={this.state.textarea}></textarea>
-            <br/>
 
-            <Button title="Clear" style="btn" handleClick={this.handleClear}/>
-            <Button  title="Copy text" style="btn" handleClick={this.handleCopy}/>
-          
+            <textarea className="textarea" name="textarea" onChange={this.handleChange} value={this.state.textarea}></textarea>
+
+            <div className="buttons">
+              <Button title="Clear" styles="btn" handleClick={this.handleClear}/>
+              <Button  title="Copy text" styles="btn" handleClick={this.handleCopy}/>
+            </div>
+
           </div>
-          <br/>
         </main>
-         <Footer />
+        <Dropdown langs={languages} language={this.state.lang} handleLangChange={this.handleLangChange}/>
+        <Footer />
       </div>
     );
   }

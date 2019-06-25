@@ -42,6 +42,10 @@
   font-size: 14px;
 }
 
+.langSelect {
+  margin: 1em auto;
+}
+
 .pulse {
   transition: all 200ms ease;
   animation: pulse 2s infinite ease-in-out;

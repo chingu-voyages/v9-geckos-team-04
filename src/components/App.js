@@ -4,6 +4,8 @@ import Recording from '../Recording.js';
 import Header from './Header';
 import Footer from './Footer';
 import Button from './Button';
+import { languages } from './langs';
+import Dropdown from './Dropdown';
 
 //----------WEB SPEECH API------------------
 var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -21,10 +23,10 @@ class App extends React.Component {
     this.state = {
       textarea: "",
       copied: false,
+      lang: recognition.lang,
       live: false
     }
   }
-
 
   handleListen = () => {
     if (this.state.live) {
@@ -52,6 +54,11 @@ class App extends React.Component {
       if (e.results[0].isFinal) {
         this.setState(prevState => ({textarea: prevState.textarea !== "" ? prevState.textarea + "\n" + transcript : transcript})); //"*** NO SPEECH RECOGNIZED ***"
         console.log(`You said: ${transcript}`);
+      }
+
+      // Pseudo-command
+      if (transcript.includes("up up down down left right left right")) {
+        console.log("KONAMIIIIIIIIIIIIIIIIIIIIIIII");
       }
     }
 
@@ -92,6 +99,12 @@ class App extends React.Component {
     }));
   }
 
+  handleLangChange = (event) => {
+    this.setState({lang: event.target.value});
+    recognition.lang = event.target.value;
+    console.log(recognition.lang)
+  }
+
   render() {
     return (
       <div className="App">
@@ -119,9 +132,10 @@ class App extends React.Component {
               <Button title="Clear" styles="btn" handleClick={this.handleClear}/>
               <Button  title="Copy text" styles="btn" handleClick={this.handleCopy}/>
             </div>
-            
+
           </div>
         </main>
+        <Dropdown langs={languages} language={this.state.lang} handleLangChange={this.handleLangChange}/>
         <Footer />
       </div>
     );

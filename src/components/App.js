@@ -5,7 +5,7 @@ import Header from './Header';
 import Footer from './Footer';
 import Button from './Button';
 import { languages } from './langs';
-import Dropdown from './Dropdown';
+import LangSelect from './LangSelect';
 
 //----------WEB SPEECH API------------------
 var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -135,7 +135,7 @@ class App extends React.Component {
 
           </div>
         </main>
-        <Dropdown langs={languages} language={this.state.lang} handleLangChange={this.handleLangChange}/>
+        <LangSelect langs={languages} language={this.state.lang} handleLangChange={this.handleLangChange}/>
         <Footer />
       </div>
     );

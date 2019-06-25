@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Dropdown = ({language, langs, handleLangChange}) => {
+const LangSelect = ({language, langs, handleLangChange}) => {
   const listOfLangs = langs.map((lang, index) =>  <option key={index} value={lang.languageCode}>{lang.Language}</option>)
   return (
     <div className="langSelect">
@@ -12,4 +12,4 @@ const Dropdown = ({language, langs, handleLangChange}) => {
   )
 }
 
-export default Dropdown;
+export default LangSelect;

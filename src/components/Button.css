@@ -1,28 +1,31 @@
-.btn{
-    padding:10px;
-    background-color: #39364d;
-    color:#ffffff;
-    font-size:14px;
-    border-radius:5px;
-    font-weight:bold;
-    margin:0 5px 20px 5px;
-  }
-.btn:hover{
-    transform: scale(1.1); 
+.btn {
+  padding: 10px;
+  background-color: #39364d;
+  color: #ffffff;
+  font-size: 14px;
+  border-radius: 5px;
+  font-weight: bold;
+  margin: 0 5px 20px 5px;
 }
-.btn :active{
-    background-color: #ffffff;
-    color: #2c274b
-}
-  .start, .stop {
-    padding:10px;
-    background-color: #6c61f6;
-    color:#ffffff;
-    font-weight: bold;
-    font-size: 14px;
-    border-radius:5px;
-  }
 
-  .start:hover, .stop :hover{
-    transform: scale(1.1); 
-  }
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.btn:active {
+  background-color: #ffffff;
+  color: #2c274b
+}
+
+.start, .stop {
+  padding: 10px;
+  background-color: #6c61f6;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.start:hover, .stop:hover {
+  transform: scale(1.1);
+}

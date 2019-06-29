@@ -1,6 +1,26 @@
+.header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .title{
     color:#453adf;
     font-size: 65px;
     font-family: 'B612 Mono', monospace;
     margin:8px 0;
+    flex: 1;
+  }
+  .navbar li{
+    list-style-type:none; 
+    display: inline-block;
+    margin: 0 6px;
+    border-bottom: 2px solid #FF4242;
+    padding-bottom: 3px;
+  }
+
+  .navbar li a{
+    text-decoration: none;
+    color:#FF4242;
+    font-size: 18px;
+
   }

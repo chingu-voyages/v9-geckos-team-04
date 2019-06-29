@@ -4,6 +4,8 @@ import Recording from '../Recording.js';
 import Header from './Header';
 import Footer from './Footer';
 import Button from './Button';
+import About from './About';
+import Features from './Features';
 import { languages } from './langs';
 import LangSelect from './LangSelect';
 
@@ -136,6 +138,8 @@ class App extends React.Component {
 
           </div>
         </main>
+        <Features />
+        <About />
         <Footer />
       </div>
     );

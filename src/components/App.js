@@ -4,6 +4,8 @@ import Recording from '../Recording.js';
 import Header from './Header';
 import Footer from './Footer';
 import Button from './Button';
+import About from './About';
+import Features from './Features';
 import { languages } from './langs';
 import LangSelect from './LangSelect';
 
@@ -120,8 +122,9 @@ class App extends React.Component {
                 ? <Recording live={this.state.live}/>
                 : <h2 className="subTitle">Speak your mind</h2>
             }
-            {
-              this.state.live
+            
+               <LangSelect langs={languages} language={this.state.lang} handleLangChange={this.handleLangChange}/>
+              {this.state.live
                 ? <Button styles="stop" title="Stop recording" value="stop" handleClick={this.handleStop}/>
                 : <Button styles="start" title="Start recording" value="start" handleClick={this.handleStart}/>
             }
@@ -135,7 +138,8 @@ class App extends React.Component {
 
           </div>
         </main>
-        <LangSelect langs={languages} language={this.state.lang} handleLangChange={this.handleLangChange}/>
+        <Features />
+        <About />
         <Footer />
       </div>
     );

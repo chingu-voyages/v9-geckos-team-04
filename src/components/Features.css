@@ -1,0 +1,24 @@
+.features{
+    background-color: #f2f2f2;
+    padding: 40px;
+}
+.feature-container{
+    display: flex;
+    padding: 20px;
+}
+
+.feature-card{
+    flex:1;
+    margin: 0 26px;
+}
+
+img{
+    height:50px;
+    width:50px;
+}
+h2{
+    color:#453adf;
+}
+p{
+    line-height: 22px;
+}

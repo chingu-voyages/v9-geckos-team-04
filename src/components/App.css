@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=B612+Mono|Lato&display=swap');
 
 .App {
-  /* margin: 0 auto; */
   text-align: center;
   background-color: #ffffff;
   font-family: 'Lato', sans-serif;
@@ -60,7 +59,6 @@
   border-radius: 5px;
   color: #39364d;
 }
-
 
 .pulse {
   transition: all 200ms ease;

@@ -1,3 +1,14 @@
+h1{
+    color:#3f3c56;
+    font-weight: lighter;
+    font-size: 24px;
+}
 .about-us{
     height: 50vh;
+}
+
+.about-para{
+    font-size: 16px;
+    font-family: Helvetica;
+    padding: 30px;
 }

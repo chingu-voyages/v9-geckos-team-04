@@ -85,4 +85,11 @@
   .textarea{
     height: 246px;
   }
+  .feature-container{
+    flex-direction: column;
+  }
+  .about-para{
+    padding: 20px !important;
+    text-align: left;
+  }
 }

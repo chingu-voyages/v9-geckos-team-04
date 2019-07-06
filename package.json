@@ -2,7 +2,6 @@
   "name": "vext-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://hemlatab.github.io/v9-geckos-team-04/",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.19",
     "@fortawesome/free-brands-svg-icons": "^5.9.0",

@@ -12,11 +12,18 @@
   }
   .profiles {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    width: 35vw;
+    margin: 0 auto;
   }
 .profiles a{
     color:#ffffff;
     text-decoration: none;
+    
+}
+.profile{
+  /* margin-right: 20px; */
+  width: 50vw;
 }
   .footer p{
       margin:5px;

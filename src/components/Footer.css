@@ -7,11 +7,17 @@
 
   }
 
+  .creators{
+    color:#ffffff;
+  }
   .profiles {
     display: flex;
     justify-content: space-between;
   }
-
+.profiles a{
+    color:#ffffff;
+    text-decoration: none;
+}
   .footer p{
       margin:5px;
   }

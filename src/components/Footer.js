@@ -1,9 +1,6 @@
 import React from 'react';
 import './Footer.css';
-<<<<<<< HEAD
 
-=======
->>>>>>> upstream/master
 var FontAwesome = require('react-fontawesome');
 
 function Footer(){

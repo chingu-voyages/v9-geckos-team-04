@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=B612+Mono|Lato&display=swap');
+html{
+  scroll-behavior:smooth;
+}
 
 .App {
   text-align: center;
@@ -97,7 +100,6 @@
   .feature-container{
     flex-direction: column;
   }
-
 
   .about-para{
     padding: 20px !important;

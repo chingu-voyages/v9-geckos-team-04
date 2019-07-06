@@ -1,6 +1,7 @@
 {
   "name": "vext-app",
   "version": "0.1.0",
+  "homepage": "https://hemlatab.github.io/v9-geckos-team-04/",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.19",
@@ -11,7 +12,8 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-fontawesome": "^1.6.1",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "react-share": "^3.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

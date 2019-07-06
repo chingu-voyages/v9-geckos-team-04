@@ -3,24 +3,55 @@
   justify-content: center;
   align-items: center;
 }
-.title{
-    color:#453adf;
+.title {
+    color: #453adf;
     font-size: 65px;
     font-family: 'B612 Mono', monospace;
     margin:8px 0;
     flex: 1;
   }
+
+  .navbar {
+    margin: 1em;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+  }
+
+  .navbar ul {
+    padding: 0;
+  }
+
   .navbar li{
-    list-style-type:none; 
+    list-style-type:none;
     display: inline-block;
     margin: 0 6px;
-    border-bottom: 2px solid #FF4242;
     padding-bottom: 3px;
+    /* border-bottom: 2px solid transparent;
+    transition: all 300ms ease; */
+    border-bottom: 2px solid #FF4242;
   }
 
   .navbar li a{
     text-decoration: none;
     color:#FF4242;
     font-size: 18px;
+  }
 
+  .navbar li:hover {
+    border-bottom: 2px solid #FF4242;
+  }
+
+
+  @media (max-width: 480px) {
+
+    .navbar {
+      position: static;
+
+    }
+    .subTitle {
+      font-size: 1.5em;
+      margin: 0;
+    }
   }

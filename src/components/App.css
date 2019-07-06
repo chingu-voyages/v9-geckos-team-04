@@ -9,6 +9,7 @@
 .container{
   display: flex;
   padding: 10px 15px;
+  margin: 3em auto;
 }
 
 .col-1{
@@ -27,7 +28,8 @@
 }
 
 .subTitle{
-  font-weight: 300;
+  font-weight: 400;
+  font-size: 2em;
   color:#6c61f6;
 }
 
@@ -76,11 +78,18 @@
   .col-1{
     display: none;
   }
+
   .container {
     flex-direction: column;
+    margin: 0;
   }
+
   .title{
     font-size: 45px !important;
+
+  }
+  .navbar {
+    position: static;
   }
   .textarea{
     height: 246px;
@@ -88,6 +97,8 @@
   .feature-container{
     flex-direction: column;
   }
+
+
   .about-para{
     padding: 20px !important;
     text-align: left;

@@ -122,11 +122,11 @@ class App extends React.Component {
                 ? <Recording live={this.state.live}/>
                 : <h2 className="subTitle">Speak your mind</h2>
             }
-            
-               <LangSelect langs={languages} language={this.state.lang} handleLangChange={this.handleLangChange}/>
-              {this.state.live
-                ? <Button styles="stop" title="Stop recording" value="stop" handleClick={this.handleStop}/>
-                : <Button styles="start" title="Start recording" value="start" handleClick={this.handleStart}/>
+
+            <LangSelect langs={languages} language={this.state.lang} handleLangChange={this.handleLangChange}/>
+            {this.state.live
+              ? <Button styles="stop" title="Stop recording" value="stop" handleClick={this.handleStop}/>
+              : <Button styles="start" title="Start recording" value="start" handleClick={this.handleStart}/>
             }
 
             <textarea className="textarea" name="textarea" onChange={this.handleChange} value={this.state.textarea}></textarea>

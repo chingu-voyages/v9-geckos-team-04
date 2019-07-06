@@ -11,7 +11,7 @@ function About(){
         </p>
        
         <p className="about-para">
-        Vext offers three amamzing features; speech to text, copy to clipboard and share facility. Easier way to learn new languages using VEXT it wil help translate your native language to your chosen language. You have the facility to copy the voice trancription to your chosen editor. Share your thoughts to the world. Vext gives you the freedom to capture your thoughts from anywhere and on any device.
+        Vext offers three amazing features; speech to text, copy to clipboard and share facility. Easier way to learn new languages using VEXT it wil help translate your native language to your chosen language. You have the facility to copy the voice trancription to your chosen editor. Share your thoughts to the world. Vext gives you the freedom to capture your thoughts from anywhere and on any device.
         </p>
         </section>
     )

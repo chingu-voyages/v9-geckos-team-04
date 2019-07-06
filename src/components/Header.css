@@ -7,8 +7,9 @@
     color: #453adf;
     font-size: 65px;
     font-family: 'B612 Mono', monospace;
-    margin:8px 0;
+    margin:8px 0 8px 25px;
     flex: 1;
+    text-align: left;
   }
 
   .navbar {

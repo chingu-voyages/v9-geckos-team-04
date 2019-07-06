@@ -7,6 +7,7 @@ h1{
 .about-para{
     font-size: 18px;
     font-family: Helvetica;
-    padding: 30px 100px;
-    line-height: 20px;
+    padding: 30px 120px;
+    line-height: 1.5;
+    text-align: left;
 }

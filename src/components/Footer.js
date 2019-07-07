@@ -16,7 +16,9 @@ function Footer(){
               name="github"
               size="2x"
             /> 
-           <p> <a href="https://github.com/pablowbk" target="_blank" title="github profile">Pablo Wiebek</a></p>
+
+           <p> <a href="https://github.com/pablowbk" target="_blank" title="github profile" rel="noopener noreferrer">Pablo Wiebek</a></p>
+
           </div>
 
           <div className="profile hemlata">
@@ -26,11 +28,13 @@ function Footer(){
               name="github"
               size="2x"
             />
-           <p>  <a href="https://github.com/Hemlatab" target="_blank" title="github profile">Hemlata Bhundhoo</a></p>
+
+           <p>  <a href="https://github.com/Hemlatab" target="_blank" title="github profile" rel="noopener noreferrer">Hemlata Bhundhoo</a></p>
+
           </div>
         </div>
         <br/>
-<a className="repo" href="https://github.com/chingu-voyages/v9-geckos-team-04" target="_blank">Project Github Repo</a>
+<a className="repo" href="https://github.com/chingu-voyages/v9-geckos-team-04" target="_blank" rel="noopener noreferrer">Project Github Repo</a>
           <p className="copyright">Copyright &copy; {new Date().getFullYear()} </p>
 
         </footer>

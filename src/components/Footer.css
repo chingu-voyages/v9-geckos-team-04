@@ -13,17 +13,25 @@
   .profiles {
     display: flex;
     justify-content: center;
-    width: 35vw;
+    /* width: 35vw; */
     margin: 0 auto;
   }
 .profiles a{
-    color:#ffffff;
+  color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
-    
+}
+.profiles a:hover{
+  color: #ffffff;
+  text-decoration: underline;
+  font-weight: 700;
 }
 .profile{
-  /* margin-right: 20px; */
-  width: 50vw;
+
+  display: flex;
+  align-items: center;
+}
+.hemlata{
+  margin-left: 40px;
 }
   .footer p{
       margin:5px;
@@ -31,3 +39,13 @@
   .icon{
       margin:3px;
   }
+  .copyright{
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+  }
+.repo{
+  color: rgba(255, 255, 255, 0.7);
+}
+.repo:hover{
+  color:#ffffff;
+}

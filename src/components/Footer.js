@@ -10,26 +10,32 @@ function Footer(){
         <h2 className="creators">Development Team</h2>
           <div className="profiles">      
           <div className="profile">
+          
               <FontAwesome
               className="icon"
               name="github"
               size="2x"
             /> 
-            <a href="https://github.com/pablowbk" target="_blank" rel="noopener noreferrer">Pablo Weisbek</a>
+
+           <p> <a href="https://github.com/pablowbk" target="_blank" title="github profile" rel="noopener noreferrer">Pablo Wiebek</a></p>
+
           </div>
 
-          <div className="profile">
+          <div className="profile hemlata">
+          
             <FontAwesome
               className="icon"
               name="github"
               size="2x"
             />
-            <a href="https://github.com/Hemlatab" target="_blank" rel="noopener noreferrer">Hemlata Bhundhoo</a>
+
+           <p>  <a href="https://github.com/Hemlatab" target="_blank" title="github profile" rel="noopener noreferrer">Hemlata Bhundhoo</a></p>
+
           </div>
         </div>
         <br/>
-
-          <p>Copyright &copy; {new Date().getFullYear()} </p>
+<a className="repo" href="https://github.com/chingu-voyages/v9-geckos-team-04" target="_blank" rel="noopener noreferrer">Project Github Repo</a>
+          <p className="copyright">Copyright &copy; {new Date().getFullYear()} </p>
 
         </footer>
     )

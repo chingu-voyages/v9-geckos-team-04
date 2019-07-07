@@ -2,7 +2,7 @@ import React from 'react';
 
 const styles = {
   textAlign: "center",
-  margin: "2em auto",
+  margin: "0",
   width: "1vmin",
   height: "1vmin",
   borderRadius: "50%",

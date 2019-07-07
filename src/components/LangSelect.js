@@ -4,7 +4,7 @@ const LangSelect = ({language, langs, handleLangChange}) => {
   const listOfLangs = langs.map((lang, index) =>  <option key={index} value={lang.languageCode}>{lang.Language}</option>)
   return (
     <div className="lang-select">
-      <label htmlFor="langs">Choose your language </label>
+      <label htmlFor="langs">Choose your language: </label>
       <select name="langs" id="langs" value={language} onChange={handleLangChange}>
         {listOfLangs}
       </select>

@@ -15,7 +15,7 @@ function Footer(){
               name="github"
               size="2x"
             /> 
-            <a href="https://github.com/pablowbk" target="_blank">Pablo Wiebek</a>
+            <a href="https://github.com/pablowbk" target="_blank" rel="noopener noreferrer">Pablo Weisbek</a>
           </div>
 
           <div className="profile">
@@ -24,7 +24,7 @@ function Footer(){
               name="github"
               size="2x"
             />
-            <a href="https://github.com/Hemlatab" target="_blank">Hemlata Bhundhoo</a>
+            <a href="https://github.com/Hemlatab" target="_blank" rel="noopener noreferrer">Hemlata Bhundhoo</a>
           </div>
         </div>
         <br/>

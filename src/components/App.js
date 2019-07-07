@@ -8,6 +8,7 @@ import About from './About';
 import Features from './Features';
 import { languages } from './langs';
 import LangSelect from './LangSelect';
+import Share from './Share';
 
 //----------WEB SPEECH API------------------
 var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -119,12 +120,14 @@ class App extends React.Component {
 
             {
               this.state.live
-                ? <Recording live={this.state.live}/>
-                : <h2 className="subTitle">Speak your mind</h2>
+              ? <Recording live={this.state.live}/>
+              : <h2 className="subTitle">Speak your mind</h2>
             }
 
             <LangSelect langs={languages} language={this.state.lang} handleLangChange={this.handleLangChange}/>
-            {this.state.live
+
+            {
+              this.state.live
               ? <Button styles="stop" title="Stop recording" value="stop" handleClick={this.handleStop}/>
               : <Button styles="start" title="Start recording" value="start" handleClick={this.handleStart}/>
             }
@@ -135,6 +138,8 @@ class App extends React.Component {
               <Button title="Clear" styles="btn" handleClick={this.handleClear}/>
               <Button  title="Copy text" styles="btn" handleClick={this.handleCopy}/>
             </div>
+
+            <Share text={this.state.textarea}/>
 
           </div>
         </main>

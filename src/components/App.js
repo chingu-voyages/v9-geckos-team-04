@@ -109,6 +109,7 @@ class App extends React.Component {
   }
 
   render() {
+    const {textarea, live, lang} = this.state;
     return (
       <div className="App">
         <Header />
@@ -118,29 +119,29 @@ class App extends React.Component {
 
           <div className="col-2">
 
-            {
-              this.state.live
-              ? <Recording live={this.state.live}/>
-              : <h2 className="subTitle">Speak your mind</h2>
+            { // Record icon flash when recording starts
+              live
+                ? <Recording live={live}/>
+                : <h2 className="subTitle">Speak your mind</h2>
             }
 
-            <LangSelect langs={languages} language={this.state.lang} handleLangChange={this.handleLangChange}/>
+            <LangSelect langs={languages} language={lang} handleLangChange={this.handleLangChange}/>
 
-            {
+            { // toggle between record/stop buttons
               this.state.live
-              ? <Button styles="stop" title="Stop recording" value="stop" handleClick={this.handleStop}/>
-              : <Button styles="start" title="Start recording" value="start" handleClick={this.handleStart}/>
+                ? <Button styles="stop" title="Stop recording" value="stop" handleClick={this.handleStop}/>
+                : <Button styles="start" title="Start recording" value="start" handleClick={this.handleStart}/>
             }
 
-            <textarea className="textarea" name="textarea" onChange={this.handleChange} value={this.state.textarea}></textarea>
+            <textarea className="textarea" name="textarea" onChange={this.handleChange} value={textarea}></textarea>
 
             <div className="buttons">
               <Button title="Clear" styles="btn" handleClick={this.handleClear}/>
               <Button  title="Copy text" styles="btn" handleClick={this.handleCopy}/>
             </div>
 
-            <Share text={this.state.textarea}/>
-
+            <Share text={textarea}/>
+            
           </div>
         </main>
         <Features />

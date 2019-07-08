@@ -5,24 +5,24 @@ var FontAwesome = require('react-fontawesome');
 
 function Footer(){
     return(
-  
-        <footer className="footer">
-        <h2 className="creators">Development Team</h2>
-          <div className="profiles">      
-          <div className="profile">
-          
-              <FontAwesome
-              className="icon"
-              name="github"
-              size="2x"
-            /> 
 
-           <p> <a href="https://github.com/pablowbk" target="_blank" title="github profile" rel="noopener noreferrer">Pablo Wiebek</a></p>
+        <footer className="footer">
+          <h2 className="creators">Development Team</h2>
+          <div className="profiles">
+            <div className="profile">
+
+              <FontAwesome
+                className="icon"
+                name="github"
+                size="2x"
+              />
+
+              <p> <a href="https://github.com/pablowbk" target="_blank" title="github profile" rel="noopener noreferrer">Pablo Weisbek</a></p>
 
           </div>
 
           <div className="profile hemlata">
-          
+
             <FontAwesome
               className="icon"
               name="github"

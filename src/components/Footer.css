@@ -50,3 +50,17 @@
   color:#ffffff;
 
 }
+
+@media (max-width: 480px) {
+  .profiles {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .profile {
+    margin: 0;
+  }
+  .hemlata {
+    order: -1;
+  }
+}

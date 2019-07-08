@@ -21,7 +21,7 @@ function Features(){
             <div className="feature-card">
               <img src="https://img.icons8.com/dotty/80/000000/share.png" alt="Share your thoughts"/>
               <h2>Share</h2>
-              <p>Get your voice (now transcribed!) out there! Share your thougths on Twitter, Instagram etc with the world.</p>
+              <p>Get your voice out there! Share your thougths on Facebook, Twitter, Whatsapp or Email with the world.</p>
 
             </div>
           </div>

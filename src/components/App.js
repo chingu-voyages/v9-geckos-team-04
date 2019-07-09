@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Recording from '../Recording.js';
+import Recording from './Recording.js';
 import Header from './Header';
 import Footer from './Footer';
 import Button from './Button';
@@ -141,7 +141,7 @@ class App extends React.Component {
             </div>
 
             <Share text={textarea}/>
-            
+
           </div>
         </main>
         <Features />

@@ -9,7 +9,7 @@ function Features(){
             <div className="feature-card">
               <img src="https://img.icons8.com/ios/50/000000/microphone.png" alt="transcribe from microphone"/>
               <h2>Speech to text</h2>
-              <p>Get your voice transcribed, instantly. Never loose a thought, and idea. Just speak your mind.</p>
+              <p>Your voice transcribed, instantly. Never loose a thought, an idea. Just speak your mind.</p>
 
             </div>
             <div className="feature-card">

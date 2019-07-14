@@ -21,6 +21,18 @@ h2{
     color:#453adf;
 }
 p{
-    font-size: 1.1em; 
+    font-size: 1.1em;
     line-height: 1.5;
+}
+
+@media (max-width: 480px) {
+  .feature-container {
+    flex-direction: column;
+  }
+  .feature-card {
+    margin-bottom: 1.5em;
+  }
+  .feature-card h2 {
+    margin: .5rem auto;
+  }
 }

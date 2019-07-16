@@ -20,9 +20,13 @@ h1{
 .logo {
   text-align: center;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo svg {
+  cursor: pointer;
   animation: spin 2s infinite;
 }
 
